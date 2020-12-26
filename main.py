@@ -49,4 +49,4 @@ async def make(text):
 
   await text.delete()
 
-client.run('Nzg5OTg4Mjg2MTk3Mzk5NTYy.X96D7A.mh98EXl5j_BeZWhgjnrQo3fQ4Cg')
+client.run('TOKEN')

@@ -59,16 +59,17 @@ async def make(text, randomArtist):
   if len(txt) > 490:
     txt = txt[:490]
   
+  print(txt)
   w = 200 if len(txt) <= 150 else 20
 
-  fnt = ImageFont.truetype('fonts/unicode.impact.ttf', 32)
+  fnt = ImageFont.truetype('fonts/OpenSansEmoji.ttf', 32, encoding = 'utf-8')
   d = ImageDraw.Draw(img)
 
-  d.text((15, w), textwrap.fill(txt, width=40), font=fnt, fill=(255,255,255))
+  d.text((15, w), textwrap.fill(txt, width=40), font=fnt, fill=(255,255,255), embedded_color=True)
 
   img.save("saves/{}.jpg".format(artist[1]), 'JPEG')
 
   await text.channel.send(file=discord.File("saves/{}.jpg".format(artist[1])))
 
 
-client.run('TOKEN')
+client.run('text')
